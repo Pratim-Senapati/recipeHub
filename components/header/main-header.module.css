@@ -45,3 +45,6 @@
   object-fit: contain;
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
 }
+.tags {
+  align-items: center;
+}

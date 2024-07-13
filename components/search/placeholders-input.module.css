@@ -1,0 +1,131 @@
+.container {
+  position: relative;
+  background: linear-gradient(135deg, rgb(165, 83, 2) 0%, rgb(135, 66, 3) 100%);
+  border-radius: 50px;
+  padding: 7px;
+  display: grid;
+  place-content: center;
+  z-index: 0;
+  max-width: 300px;
+}
+
+.search_container {
+  position: relative;
+  width: 100%;
+  border-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    rgb(226,211,167) 0%,
+    rgb(226,211,167) 100%
+  );
+  padding: 0.1px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.search_container::after,
+.search_container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+}
+
+.search_container::before {
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(
+    0deg,
+    rgb(247, 234, 218) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  z-index: -1;
+}
+
+.search_container::after {
+  bottom: -1px;
+  right: -1px;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 212, 163) 0%,
+    rgb(255, 236, 211) 100%
+  );
+  box-shadow: rgba(232, 186, 79, 0.702) 3px 3px 5px 0px,
+    rgba(232, 173, 79, 0.702) 5px 5px 20px 0px;
+  z-index: -2;
+}
+
+.input {
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgb(226,211,167) 0%,
+    rgb(226,211,167) 100%
+  );
+  border: none;
+  color: black;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+.input:focus {
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    rgb(226,211,167) 0%,
+    rgb(226,211,167) 100%
+  );
+}
+.button {
+  background: linear-gradient(
+    135deg,
+    rgb(249,180,91) 0%,
+    rgb(169,125,67) 100%
+  );
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.search__icon {
+  width: 23px;
+  aspect-ratio: 1;
+  border-left: 2px solid white;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 50%;
+  padding-left: 5px;
+  margin-right: 0px;
+}
+
+.search__icon path {
+  fill: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}

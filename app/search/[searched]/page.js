@@ -1,17 +1,17 @@
 import MealsGrid from "@/components/meals/meals-grid";
 import classes from "./page.module.css";
 import Link from "next/link";
-import { getMeals } from "@/lib/meals";
+import { getSearchedMeal } from "@/lib/meals";
 import { Suspense } from "react";
 
-async function Meals() {
-  const meals = await getMeals();
-  console.log(meals);
+function Meals(params) {
+  const { meals } = params;
   return <MealsGrid meals={meals} />;
 }
 
-export default async function mealsPage() {
-  //const meals = await getMeals();
+export default async function searchedPage({ params }) {
+  const meals = await getSearchedMeal(params.searched);
+  //console.log(meals);
   return (
     <>
       <header className={classes.header}>
@@ -30,7 +30,7 @@ export default async function mealsPage() {
         <Suspense
           fallback={<p className={classes.loading}>Fetching meals...</p>}
         >
-          <Meals />
+          <Meals meals={meals} />
         </Suspense>
       </main>
     </>

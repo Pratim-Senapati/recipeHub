@@ -22,7 +22,7 @@ export default function PlaceHoldersInput() {
       }, 800);
     }, 3000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [values]);
   const [inputValue, setInputValue] = useState("");
   const handleChange = (e) => {
     setInputValue(e.target.value);

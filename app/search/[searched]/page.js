@@ -3,6 +3,7 @@ import classes from "./page.module.css";
 import Link from "next/link";
 import { getSearchedMeal } from "@/lib/meals";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 
 function Meals(params) {
   const { meals } = params;
@@ -11,7 +12,7 @@ function Meals(params) {
 
 export default async function searchedPage({ params }) {
   const meals = await getSearchedMeal(params.searched);
-  //console.log(meals);
+  if (meals.length == 0) notFound();
   return (
     <>
       <header className={classes.header}>

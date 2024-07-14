@@ -14,7 +14,7 @@ To get started with RecipeHub, follow these steps:
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/yourusername/recipehub.git
+   git clone https://github.com/Pratim-Senapati/recipeHub.git
    cd recipehub
    ```
 2. **Install Dependencies**:

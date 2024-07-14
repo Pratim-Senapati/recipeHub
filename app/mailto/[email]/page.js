@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classes from "./page.module.css";
 import emailjs from "emailjs-com";
+import Notification from "@/components/notification/notification";
 
 export default function MailPage({ params }) {
   const Email = params.email;
@@ -10,9 +11,22 @@ export default function MailPage({ params }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [body, setBody] = useState("");
+  const [stat, setStat] = useState("");
+
+  useEffect(() => {
+    if (stat === "success" || stat === "error") {
+      const timer = setTimeout(() => {
+        setStat(null);
+      }, 3000);
+      setBody("");
+      setEmail("");
+      setName("");
+      return () => clearTimeout(timer);
+    }
+  }, [stat]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const templateParams = {
       sender_name: name,
       receiver_email: receiverEmail,
@@ -26,21 +40,13 @@ export default function MailPage({ params }) {
         templateParams,
         "7ly1ijS560yI3fT8b"
       )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Mail sent successfully");
-        },
-        (error) => {
-          console.log("FAILED...", error);
-          alert("Failed to send mail");
-        }
-      );
-    setBody("");
-    setEmail("");
-    setName("");
+      .then((res) => {
+        setStat("success");
+      })
+      .catch((err) => {
+        setStat("error");
+      });
   };
-
   return (
     <>
       <header className={classes.header}>
@@ -80,6 +86,7 @@ export default function MailPage({ params }) {
           </p>
           <p className={classes.actions}>
             <button type="submit">Send</button>
+            {stat && <Notification stat={stat}/>}
           </p>
         </form>
       </main>

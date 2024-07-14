@@ -8,12 +8,12 @@ export default function Home() {
     <>
       <header className={classes.header}>
         <div className={classes.slideshow}>
-          <ImageSlideshow/>
+          <ImageSlideshow />
         </div>
         <div>
           <div className={classes.hero}>
-            <h1>NextLevel Food for NextLevel Foodies</h1>
-            <p>Taste & share food from all over the world.</p>
+            <h1>Find your next favorite dish today</h1>
+            <p>From home kitchens to gourmet creations.</p>
           </div>
           <div className={classes.cta}>
             <Link href="/community">Join the Community</Link>
@@ -25,26 +25,24 @@ export default function Home() {
         <section className={classes.section}>
           <h2>How it works</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
+            Recipe Hub is a platform for foodies to share their favorite recipes
+            with the world. It&apos;s a place to discover new dishes, and to
+            connect with other food lovers.
           </p>
           <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Recipe Hub is a place to discover new dishes, and to connect with
+            other food lovers.
           </p>
         </section>
 
         <section className={classes.section}>
-          <h2>Why NextLevel Food?</h2>
+          <h2>Why Recipe Hub?</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
-          </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            At RecipeHub, culinary creativity meets community. Our platform is
+            designed to foster a love of cooking and sharing. Discover new
+            recipes, connect with other food enthusiasts, and be inspired by the
+            endless possibilities that come from the kitchen. Join us and start
+            your culinary adventure today.
           </p>
         </section>
       </main>
